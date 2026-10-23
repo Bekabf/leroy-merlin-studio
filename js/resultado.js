@@ -1,24 +1,64 @@
 
 document.addEventListener("DOMContentLoaded", function () {
+
   const needElement = document.querySelector("#recommendationNeed");
   const explanationElement = document.querySelector("#recommendationExplanation");
   const resultsElement = document.querySelector("#recommendationResults");
 
-  if (!needElement || !resultsElement) return;
+  if (!needElement || !explanationElement || !resultsElement) {
+    console.error("Elementos da página de resultados não encontrados.");
+    return;
+  }
+
+  // Protege textos exibidos dentro do HTML.
+  function escapeHTML(text) {
+    return String(text ?? "").replace(/[&<>"']/g, function (char) {
+      const entities = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      };
+
+      return entities[char];
+    });
+  }
+
+  function showEmptyState(title, description, link, buttonText) {
+    resultsElement.innerHTML = `
+      <div class="empty-state results-empty-state">
+        <span class="results-empty-icon" aria-hidden="true">✦</span>
+
+        <h3>${escapeHTML(title)}</h3>
+
+        <p>${escapeHTML(description)}</p>
+
+        <a href="${link}" class="results-empty-button">
+          ${escapeHTML(buttonText)} ↗
+        </a>
+      </div>
+    `;
+  }
+
+  // ==========================================
+  // RECUPERAR RECOMENDAÇÃO
+  // ==========================================
 
   const savedResult = sessionStorage.getItem("leroyRecommendation");
 
   if (!savedResult) {
-    needElement.textContent = "Nenhuma solicitação encontrada.";
-    resultsElement.innerHTML = `
-      <div class="empty-state">
-        <h3>Vamos começar?</h3>
-        <p>Conte ao assistente o que você deseja fazer.</p>
-        <a href="assistente.html" class="btn btn-primary">
-          Acessar assistente
-        </a>
-      </div>
-    `;
+    needElement.textContent = "Você ainda não descreveu seu projeto.";
+    explanationElement.textContent =
+      "Conte sua ideia ao assistente para receber sugestões de materiais.";
+
+    showEmptyState(
+      "Vamos começar seu projeto?",
+      "Descreva o que deseja transformar e descubra materiais para começar.",
+      "assistente.html",
+      "Acessar assistente"
+    );
+
     return;
   }
 
@@ -27,86 +67,162 @@ document.addEventListener("DOMContentLoaded", function () {
   try {
     recommendation = JSON.parse(savedResult);
   } catch (error) {
+    console.error("Erro ao recuperar recomendações:", error);
+
     needElement.textContent = "Não foi possível recuperar sua solicitação.";
-    resultsElement.textContent = "Tente novamente pelo assistente.";
+    explanationElement.textContent =
+      "Precisamos que você informe sua ideia novamente.";
+
+    showEmptyState(
+      "Não conseguimos recuperar sua ideia.",
+      "Volte ao assistente e descreva seu projeto novamente.",
+      "assistente.html",
+      "Tentar novamente"
+    );
+
     return;
   }
 
-  needElement.textContent = recommendation.need || "";
+  needElement.textContent = recommendation.need || "Projeto não informado.";
 
-  const recommendedProducts = window.MVP_PRODUCTS.filter(product =>
-    (recommendation.productIds || []).includes(product.id)
-  );
+  // ==========================================
+  // IDENTIFICAR PRODUTOS
+  // ==========================================
+
+  const products = Array.isArray(window.MVP_PRODUCTS)
+    ? window.MVP_PRODUCTS
+    : [];
+
+  const productIds = Array.isArray(recommendation.productIds)
+    ? recommendation.productIds.map(Number)
+    : [];
+
+  const recommendedProducts = products.filter(function (product) {
+    return productIds.includes(Number(product.id));
+  });
 
   if (recommendedProducts.length === 0) {
     explanationElement.textContent =
-      "Ainda não identificamos produtos específicos para essa solicitação.";
+      "Ainda não identificamos materiais específicos para essa solicitação.";
 
-    resultsElement.innerHTML = `
-      <div class="empty-state">
-        <h3>Não encontramos uma recomendação específica</h3>
-        <p>
-          Tente mencionar uma atividade, como pintar,
-          instalar prateleiras, iluminar ou organizar.
-        </p>
-        <a href="produtos.html" class="btn btn-secondary">
-          Explorar catálogo
-        </a>
-      </div>
-    `;
+    showEmptyState(
+      "Não encontramos uma recomendação específica.",
+      "Experimente mencionar uma atividade como pintar, instalar prateleiras, iluminar ou organizar.",
+      "produtos.html",
+      "Explorar catálogo"
+    );
+
     return;
   }
 
-  explanationElement.textContent =
-    (recommendation.explanations || []).join(" ");
+  const explanations = Array.isArray(recommendation.explanations)
+    ? recommendation.explanations
+    : [];
 
-  resultsElement.innerHTML = recommendedProducts.map(product => `
-    <article class="product-card">
-      <div class="product-image-placeholder" aria-hidden="true">
-        ${product.icon}
-      </div>
+  explanationElement.textContent = explanations.length
+    ? explanations.join(" ")
+    : "Confira os materiais sugeridos para começar seu projeto.";
 
-      <div class="product-card-content">
-        <span class="product-category">${product.category}</span>
+  // ==========================================
+  // EXIBIR CARDS DOS PRODUTOS
+  // ==========================================
 
-        <h3>${product.name}</h3>
+  resultsElement.innerHTML = recommendedProducts.map(function (product) {
 
-        <p>${product.description}</p>
+    return `
+      <article class="product-card results-recommendation-card">
 
-        <p class="product-price">
-          ${window.formatMoney(product.price)}
-        </p>
-
-        <p class="product-aisle">
-          <strong>Localização demonstrativa:</strong>
-          ${product.aisle}
-        </p>
-
-        <div class="product-actions">
-          <button
-            type="button"
-            class="btn btn-primary add-recommended-product"
-            data-product-id="${product.id}"
-          >
-            + Adicionar ao projeto
-          </button>
-
-          <a
-            href="localizacao.html?produto=${product.id}"
-            class="btn btn-secondary"
-          >
-            Onde encontrar
-          </a>
+        <div class="product-image-placeholder product-card-icon"
+             aria-hidden="true">
+          ${escapeHTML(product.icon || "✦")}
         </div>
-      </div>
-    </article>
-  `).join("");
+
+        <div class="product-card-content">
+
+          <span class="product-category">
+            ${escapeHTML(product.category)}
+          </span>
+
+          <h3>${escapeHTML(product.name)}</h3>
+
+          <p class="results-product-description">
+            ${escapeHTML(product.description)}
+          </p>
+
+          <div class="results-price-area">
+            <span class="results-price-label">
+              VALOR DEMONSTRATIVO
+            </span>
+
+            <strong class="product-price">
+              ${window.formatMoney(product.price)}
+            </strong>
+          </div>
+
+          <p class="product-aisle product-location">
+            <span aria-hidden="true">⌖</span>
+            <strong>Localização demonstrativa:</strong>
+            ${escapeHTML(product.aisle)}
+          </p>
+
+          <div class="product-actions">
+
+            <button
+              type="button"
+              class="btn btn-primary add-recommended-product"
+              data-product-id="${Number(product.id)}"
+              aria-label="Adicionar ${escapeHTML(product.name)} ao projeto"
+            >
+              + Adicionar ao projeto
+            </button>
+
+            <a
+              href="localizacao.html?produto=${Number(product.id)}"
+              class="btn btn-secondary"
+            >
+              Onde encontrar ↗
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+    `;
+  }).join("");
+
+  // ==========================================
+  // ADICIONAR PRODUTO AO PROJETO
+  // ==========================================
 
   resultsElement.addEventListener("click", function (event) {
+
     const button = event.target.closest(".add-recommended-product");
 
     if (!button) return;
 
-    window.addToProject(button.dataset.productId);
+    const productId = Number(button.dataset.productId);
+
+    if (!Number.isInteger(productId)) return;
+
+    if (typeof window.addToProject !== "function") {
+      console.error("A função addToProject não está disponível.");
+      return;
+    }
+
+    window.addToProject(productId);
+
+    // Feedback visual ao adicionar o produto.
+    button.textContent = "✓ Adicionado ao projeto";
+    button.classList.add("product-added");
+
+    window.setTimeout(function () {
+      if (!button.isConnected) return;
+
+      button.textContent = "+ Adicionar ao projeto";
+      button.classList.remove("product-added");
+    }, 1800);
+
   });
+
 });

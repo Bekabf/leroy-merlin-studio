@@ -1,4 +1,4 @@
-alert("O JavaScript do Meu Projeto carregou!");
+
 document.addEventListener("DOMContentLoaded", function () {
 
   const projectItems = document.querySelector("#projectItems");

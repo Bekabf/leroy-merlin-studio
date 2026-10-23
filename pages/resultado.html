@@ -1,83 +1,262 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recomendações | Leroy Merlin MVP</title>
+
+  <title>Recomendações | Leroy Merlin Studio</title>
+
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/resultado.css">
 </head>
-<body>
 
+<body class="home-page results-page">
+
+  <!-- CABEÇALHO PADRÃO -->
   <header class="site-header">
     <div class="container header-content">
-      <a href="../index.html" class="logo">
-        Leroy Merlin <span>MVP</span>
+
+      <a class="logo" href="../index.html">
+
+        <span class="brand-symbol" aria-hidden="true">
+          <svg viewBox="0 0 64 64"
+               xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 4 L60 52 H4 Z" fill="#17633b"/>
+            <path d="M32 20 L46 44 H18 Z" fill="#ffffff"/>
+            <path d="M32 30 L40 44 H24 Z" fill="#17633b"/>
+          </svg>
+        </span>
+
+        <span class="brand-text">
+          <span class="brand-name">LEROY MERLIN</span>
+          <span class="brand-subtitle">
+            STUDIO · PROJETO ACADÊMICO
+          </span>
+        </span>
+
       </a>
 
-      <button id="menuToggle" class="menu-toggle"
-        type="button" aria-label="Abrir menu">☰</button>
+      <button
+        id="menuToggle"
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+      >
+        ☰
+      </button>
 
       <nav class="main-nav">
         <a href="../index.html">Início</a>
-        <a href="assistente.html">Assistente</a>
+        <a href="assistente.html" class="active">Assistente</a>
         <a href="produtos.html">Produtos</a>
-        <a href="localizacao.html">Localização</a>
-        <a href="meu-projeto.html">
-          Meu projeto (<span id="projectCount">0</span>)
+        <a href="localizacao.html">Encontrar na loja</a>
+
+        <a href="meu-projeto.html" class="nav-project">
+          Meu projeto <span id="projectCount">0</span>
         </a>
       </nav>
+
     </div>
   </header>
 
-  <main class="container page-content">
+  <main>
 
-    <section class="page-heading">
-      <span class="eyebrow">RECOMENDAÇÕES PERSONALIZADAS</span>
-      <h1>Encontramos algumas soluções para você!</h1>
-      <p>
-        Confira os produtos sugeridos para começar seu projeto.
-      </p>
-    </section>
+    <!-- INTRODUÇÃO -->
+    <section class="results-hero">
+      <div class="container">
 
-    <section class="recommendation-summary">
-      <h2>Seu projeto</h2>
-      <p id="recommendationNeed"></p>
-    </section>
+        <span class="results-kicker">
+          RECOMENDAÇÕES PERSONALIZADAS
+        </span>
 
-    <section class="recommendation-section">
-      <h2>Produtos recomendados</h2>
-      <p id="recommendationExplanation"></p>
+        <h1>
+          Encontramos ideias para
+          transformar seu espaço.
+        </h1>
 
-      <div id="recommendationResults" class="product-grid">
-        <p>Carregando recomendações...</p>
+        <p>
+          Com base no que você contou ao nosso assistente,
+          selecionamos materiais que podem ajudar
+          a tirar seu projeto do papel.
+        </p>
+
       </div>
     </section>
 
-    <section class="recommendation-actions">
-      <a href="assistente.html" class="btn btn-secondary">
-        ← Fazer outra pergunta
-      </a>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section class="results-content">
+      <div class="container">
 
-      <a href="meu-projeto.html" class="btn btn-primary">
-        Ver meu projeto →
-      </a>
+        <!-- RESUMO DA IDEIA -->
+        <section class="results-idea-card">
+
+          <div class="results-idea-icon" aria-hidden="true">
+            ✦
+          </div>
+
+          <div>
+            <span class="results-card-label">
+              SUA IDEIA
+            </span>
+
+            <h2>O projeto que você imaginou</h2>
+
+            <p id="recommendationNeed">
+              Carregando sua ideia...
+            </p>
+          </div>
+
+          <a
+            href="assistente.html"
+            class="results-edit-link"
+          >
+            Alterar ideia ↗
+          </a>
+
+        </section>
+
+        <!-- PRODUTOS RECOMENDADOS -->
+        <section class="results-products-section">
+
+          <div class="results-section-heading">
+
+            <div>
+              <span class="results-kicker">
+                MATERIAIS PARA COMEÇAR
+              </span>
+
+              <h2>Produtos recomendados</h2>
+
+              <p id="recommendationExplanation">
+                Preparando recomendações para seu projeto...
+              </p>
+            </div>
+
+            <a
+              href="produtos.html"
+              class="results-catalog-link"
+            >
+              Explorar catálogo ↗
+            </a>
+
+          </div>
+
+          <!-- PREENCHIDO PELO resultado.js -->
+          <div
+            id="recommendationResults"
+            class="results-product-grid"
+            aria-live="polite"
+          >
+            <p>Carregando recomendações...</p>
+          </div>
+
+        </section>
+
+        <!-- AÇÕES -->
+        <div class="results-actions">
+
+          <a
+            href="assistente.html"
+            class="results-secondary-button"
+          >
+            ← Fazer outra pergunta
+          </a>
+
+          <a
+            href="meu-projeto.html"
+            class="results-primary-button"
+          >
+            Ver meu projeto ↗
+          </a>
+
+        </div>
+
+      </div>
     </section>
 
-    <p class="disclaimer">
-      Recomendações simuladas com JavaScript.
-      Produtos, preços e corredores são demonstrativos.
-    </p>
+    <!-- PRÓXIMO PASSO -->
+    <section class="results-next-section">
+      <div class="container">
+
+        <div class="results-next-banner">
+
+          <div>
+            <span class="results-next-kicker">
+              CONTINUE SUA TRANSFORMAÇÃO
+            </span>
+
+            <h2>
+              Da inspiração ao planejamento.
+            </h2>
+
+            <p>
+              Adicione os materiais recomendados ao seu projeto,
+              ajuste as quantidades e acompanhe o orçamento
+              estimado em um só lugar.
+            </p>
+          </div>
+
+          <a
+            href="meu-projeto.html"
+            class="results-next-button"
+          >
+            Organizar meu projeto ↗
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AVISO ACADÊMICO -->
+    <section class="results-disclaimer-section">
+      <div class="container">
+
+        <p class="results-disclaimer">
+          <strong>Recomendações demonstrativas:</strong>
+          as sugestões são geradas por regras em JavaScript,
+          sem utilização de inteligência artificial externa.
+          Os produtos, preços e corredores são ilustrativos
+          e utilizados exclusivamente para fins acadêmicos.
+        </p>
+
+      </div>
+    </section>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>Projeto acadêmico MVP — demonstração não oficial.</p>
+  <!-- RODAPÉ PADRÃO -->
+  <footer class="premium-footer">
+
+    <div class="container footer-layout">
+
+      <div>
+        <strong>LEROY MERLIN STUDIO</strong>
+        <p>Ideias para transformar seus espaços.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="assistente.html">Assistente</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="localizacao.html">Localização</a>
+        <a href="meu-projeto.html">Meu projeto</a>
+      </div>
+
     </div>
+
+    <div class="container footer-bottom">
+      Projeto acadêmico demonstrativo, sem vínculo oficial
+      com a Leroy Merlin. Produtos, valores e localizações
+      são ilustrativos.
+    </div>
+
   </footer>
 
+  <!-- JAVASCRIPT -->
   <script src="../js/app.js"></script>
   <script src="../js/resultado.js"></script>
 
