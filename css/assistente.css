@@ -1,0 +1,383 @@
+
+/* ==========================================
+   LEROY MERLIN STUDIO
+   PÁGINA ASSISTENTE
+========================================== */
+
+/* INTRODUÇÃO */
+
+.assistant-page .assistant-hero {
+  padding: 85px 0 65px;
+  background: #fafaf7;
+}
+
+.assistant-hero-content {
+  max-width: 1180px;
+}
+
+.assistant-hero h1 {
+  max-width: 850px;
+  margin: 0 0 25px;
+  color: #172d20;
+  font-size: clamp(40px, 4.5vw, 64px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -2px;
+}
+
+.assistant-hero p {
+  max-width: 650px;
+  margin: 0;
+  color: #66766c;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.assistant-hero-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  color: #6b8573;
+  font-size: 13px;
+}
+
+.assistant-note-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e5f1e8;
+  color: #17633b;
+  font-size: 18px;
+}
+
+/* ÁREA DO ASSISTENTE */
+
+.assistant-main-section {
+  padding: 15px 0 85px;
+}
+
+.assistant-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+  align-items: start;
+  gap: 28px;
+}
+
+/* CARTÃO PRINCIPAL */
+
+.assistant-page .assistant-box {
+  background: #ffffff;
+  border: 1px solid #e2eae0;
+  border-radius: 20px;
+  padding: 42px;
+  box-shadow: 0 12px 38px rgba(24, 64, 39, 0.04);
+  min-width: 0;
+}
+
+.assistant-step {
+  display: block;
+  margin-bottom: 18px;
+  color: #23824e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.assistant-box-heading h2 {
+  margin: 0 0 15px;
+  color: #20392a;
+  font-size: 29px;
+  line-height: 1.25;
+  letter-spacing: -0.6px;
+}
+
+.assistant-box-heading p {
+  margin: 0 0 32px;
+  color: #718077;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* FORMULÁRIO */
+
+.assistant-page #assistantForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.assistant-page #assistantForm label {
+  color: #294334;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.assistant-page #needText {
+  display: block;
+  width: 100%;
+  min-height: 190px;
+  padding: 20px;
+  border: 1px solid #dce6da;
+  border-radius: 12px;
+  background: #fbfcfa;
+  color: #253d2d;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.7;
+  resize: vertical;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.assistant-page #needText::placeholder {
+  color: #99a79d;
+}
+
+.assistant-page #needText:focus {
+  border-color: #23824e;
+  box-shadow: 0 0 0 4px rgba(35, 130, 78, 0.1);
+}
+
+.assistant-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.assistant-form-footer > span {
+  max-width: 250px;
+  color: #829087;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.assistant-page .assistant-submit {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+/* MENSAGENS DO JAVASCRIPT */
+
+.assistant-page #assistantOutput {
+  margin-top: 20px;
+  color: #405448;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.assistant-page #assistantOutput:empty {
+  display: none;
+}
+
+/* PAINEL DE EXEMPLOS */
+
+.assistant-page .assistant-examples {
+  padding: 36px 30px;
+  border-radius: 20px;
+  border: 1px solid #e0e9df;
+  background: #f0f5ef;
+}
+
+.assistant-side-kicker {
+  display: block;
+  margin-bottom: 20px;
+  color: #23824e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.assistant-examples h2 {
+  margin: 0 0 16px;
+  color: #20392a;
+  font-size: 27px;
+  line-height: 1.25;
+  letter-spacing: -0.6px;
+}
+
+.assistant-examples > p {
+  margin: 0 0 26px;
+  color: #718077;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* SUGESTÕES CLICÁVEIS */
+
+.assistant-suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.assistant-page .suggestion-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #e0e9df;
+  border-radius: 10px;
+  color: #355440;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.assistant-page .suggestion-button:hover {
+  background: #fafdfa;
+  border-color: #a4cbb0;
+  transform: translateX(3px);
+}
+
+.suggestion-icon {
+  color: #23824e;
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.suggestion-arrow {
+  margin-left: auto;
+  color: #23824e;
+  font-size: 17px;
+}
+
+.assistant-side-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid #d8e5d7;
+}
+
+.assistant-side-note > span {
+  color: #23824e;
+  font-size: 22px;
+}
+
+.assistant-side-note p {
+  margin: 0;
+  color: #748579;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* AVISO ACADÊMICO */
+
+.assistant-disclaimer-section {
+  padding: 0 0 90px;
+}
+
+.assistant-disclaimer {
+  margin: 0;
+  padding: 20px 24px;
+  background: #edf3ec;
+  border-left: 3px solid #23824e;
+  border-radius: 8px;
+  color: #718077;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.assistant-disclaimer strong {
+  color: #355440;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 900px) {
+  .assistant-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .assistant-page .assistant-box {
+    padding: 32px;
+  }
+
+  .assistant-page .assistant-examples {
+    padding: 30px;
+  }
+
+  .assistant-page .assistant-hero {
+    padding: 65px 0 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  .assistant-page .assistant-hero {
+    padding: 55px 0 40px;
+  }
+
+  .assistant-hero h1 {
+    font-size: 39px;
+    letter-spacing: -1.4px;
+  }
+
+  .assistant-hero p {
+    font-size: 15px;
+  }
+
+  .assistant-main-section {
+    padding-bottom: 55px;
+  }
+
+  .assistant-page .assistant-box {
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+
+  .assistant-box-heading h2 {
+    font-size: 25px;
+  }
+
+  .assistant-page .assistant-examples {
+    padding: 26px 20px;
+  }
+
+  .assistant-form-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .assistant-form-footer > span {
+    max-width: none;
+  }
+
+  .assistant-page .assistant-submit {
+    width: 100%;
+  }
+
+  .assistant-disclaimer-section {
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 400px) {
+  .assistant-hero h1 {
+    font-size: 34px;
+  }
+
+  .assistant-page #needText {
+    padding: 15px;
+  }
+}

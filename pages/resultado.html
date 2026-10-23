@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recomendações | Leroy Merlin MVP</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="../index.html" class="logo">
+        Leroy Merlin <span>MVP</span>
+      </a>
+
+      <button id="menuToggle" class="menu-toggle"
+        type="button" aria-label="Abrir menu">☰</button>
+
+      <nav class="main-nav">
+        <a href="../index.html">Início</a>
+        <a href="assistente.html">Assistente</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="localizacao.html">Localização</a>
+        <a href="meu-projeto.html">
+          Meu projeto (<span id="projectCount">0</span>)
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-content">
+
+    <section class="page-heading">
+      <span class="eyebrow">RECOMENDAÇÕES PERSONALIZADAS</span>
+      <h1>Encontramos algumas soluções para você!</h1>
+      <p>
+        Confira os produtos sugeridos para começar seu projeto.
+      </p>
+    </section>
+
+    <section class="recommendation-summary">
+      <h2>Seu projeto</h2>
+      <p id="recommendationNeed"></p>
+    </section>
+
+    <section class="recommendation-section">
+      <h2>Produtos recomendados</h2>
+      <p id="recommendationExplanation"></p>
+
+      <div id="recommendationResults" class="product-grid">
+        <p>Carregando recomendações...</p>
+      </div>
+    </section>
+
+    <section class="recommendation-actions">
+      <a href="assistente.html" class="btn btn-secondary">
+        ← Fazer outra pergunta
+      </a>
+
+      <a href="meu-projeto.html" class="btn btn-primary">
+        Ver meu projeto →
+      </a>
+    </section>
+
+    <p class="disclaimer">
+      Recomendações simuladas com JavaScript.
+      Produtos, preços e corredores são demonstrativos.
+    </p>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Projeto acadêmico MVP — demonstração não oficial.</p>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/resultado.js"></script>
+
+</body>
+</html>

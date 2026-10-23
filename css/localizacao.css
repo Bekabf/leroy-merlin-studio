@@ -1,0 +1,418 @@
+
+/* ==========================================
+   LEROY MERLIN STUDIO
+   PÁGINA DE LOCALIZAÇÃO
+========================================== */
+
+/* INTRODUÇÃO */
+
+.location-page .location-hero {
+  padding: 85px 0 65px;
+  background: #fafaf7;
+}
+
+.location-hero h1 {
+  max-width: 850px;
+  margin: 0 0 25px;
+  color: #172d20;
+  font-size: clamp(40px, 4.5vw, 64px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -2px;
+}
+
+.location-hero p {
+  max-width: 680px;
+  margin: 0;
+  color: #66766c;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.location-hero-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  color: #6b8573;
+  font-size: 13px;
+}
+
+.location-detail-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e5f1e8;
+  color: #17633b;
+  font-size: 20px;
+}
+
+/* ÁREA PRINCIPAL */
+
+.location-main-section {
+  padding: 10px 0 95px;
+}
+
+/* PESQUISA */
+
+.location-page .location-search-box {
+  margin: 0 0 30px;
+  padding: 36px;
+  background: #ffffff;
+  border: 1px solid #e2eae0;
+  border-radius: 20px;
+  box-shadow: 0 12px 38px rgba(24, 64, 39, 0.04);
+}
+
+.location-search-heading {
+  margin-bottom: 28px;
+}
+
+.location-step {
+  display: block;
+  margin-bottom: 14px;
+  color: #23824e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.location-search-heading h2 {
+  margin: 0 0 14px;
+  color: #20392a;
+  font-size: 29px;
+  line-height: 1.25;
+  letter-spacing: -0.6px;
+}
+
+.location-search-heading p {
+  margin: 0;
+  color: #718077;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.location-page .location-search-box label {
+  display: block;
+  margin-bottom: 10px;
+  color: #294334;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.location-input-wrapper {
+  position: relative;
+}
+
+.location-search-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #799282;
+  font-size: 26px;
+  pointer-events: none;
+}
+
+.location-page #locationSearch {
+  display: block;
+  width: 100%;
+  height: 56px;
+  margin: 0;
+  padding: 0 18px 0 52px;
+  border: 1px solid #dce6da;
+  border-radius: 10px;
+  background: #fbfcfa;
+  color: #294334;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.location-page #locationSearch:focus {
+  border-color: #23824e;
+  box-shadow: 0 0 0 4px rgba(35, 130, 78, 0.1);
+}
+
+/* PAINÉIS */
+
+.location-page .location-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+  align-items: start;
+  gap: 28px;
+}
+
+.location-page .location-products,
+.location-page .location-map-area {
+  min-width: 0;
+  margin: 0;
+  padding: 34px;
+  background: #ffffff;
+  border: 1px solid #e2eae0;
+  border-radius: 20px;
+  box-shadow: 0 12px 38px rgba(24, 64, 39, 0.04);
+}
+
+.location-panel-heading {
+  margin-bottom: 28px;
+}
+
+.location-panel-heading h2 {
+  margin: 0 0 12px;
+  color: #20392a;
+  font-size: 26px;
+  line-height: 1.25;
+  letter-spacing: -0.6px;
+}
+
+.location-panel-heading p {
+  margin: 0;
+  color: #718077;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* LISTA DE PRODUTOS */
+
+.location-page #locationResults {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.location-page #locationResults > * {
+  min-width: 0;
+}
+
+.location-page #locationResults button {
+  cursor: pointer;
+  font-family: inherit;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.location-page #locationResults button:hover {
+  transform: translateY(-2px);
+}
+
+/* MAPA */
+
+.location-map-frame {
+  padding: 22px;
+  background: #f0f5ef;
+  border: 1px solid #e0e9df;
+  border-radius: 16px;
+}
+
+.location-map-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.location-map-label {
+  color: #355440;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.location-map-badge {
+  padding: 8px 10px;
+  background: #ffffff;
+  border-radius: 6px;
+  color: #688674;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+}
+
+/* PRESERVA O MAPA GERADO PELO JAVASCRIPT */
+
+.location-page #storeMap {
+  width: 100%;
+  min-height: 230px;
+  margin: 0;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #dce7da;
+  border-radius: 12px;
+}
+
+/* CORREDORES / ELEMENTOS DO MAPA */
+
+.location-page #storeMap button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.location-map-legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  color: #66766c;
+  font-size: 12px;
+}
+
+.legend-color {
+  width: 13px;
+  height: 13px;
+  background: #17633b;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.location-map-note {
+  margin: 18px 0 0;
+  color: #849388;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* BANNER PARA O CATÁLOGO */
+
+.location-catalog-section {
+  padding: 0 0 55px;
+}
+
+.location-catalog-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 55px 60px;
+  background: #194d32;
+  border-radius: 20px;
+}
+
+.location-catalog-banner .section-kicker {
+  color: #b6ddc3;
+}
+
+.location-catalog-banner h2 {
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.location-catalog-banner p {
+  max-width: 550px;
+  margin: 0;
+  color: #d2e5d8;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* AVISO ACADÊMICO */
+
+.location-disclaimer-section {
+  padding: 0 0 80px;
+}
+
+.location-disclaimer {
+  margin: 0;
+  padding: 20px 24px;
+  background: #edf3ec;
+  border-left: 3px solid #23824e;
+  border-radius: 8px;
+  color: #718077;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.location-disclaimer strong {
+  color: #355440;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+  .location-page .location-hero {
+    padding: 65px 0 50px;
+  }
+
+  .location-page .location-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .location-catalog-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .location-page .location-hero {
+    padding: 55px 0 40px;
+  }
+
+  .location-hero h1 {
+    font-size: 39px;
+    letter-spacing: -1.4px;
+  }
+
+  .location-hero p {
+    font-size: 15px;
+  }
+
+  .location-page .location-search-box,
+  .location-page .location-products,
+  .location-page .location-map-area {
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+
+  .location-search-heading h2 {
+    font-size: 25px;
+  }
+
+  .location-panel-heading h2 {
+    font-size: 23px;
+  }
+
+  .location-map-frame {
+    padding: 15px;
+  }
+
+  .location-main-section {
+    padding-bottom: 65px;
+  }
+
+  .location-catalog-banner {
+    padding: 30px;
+  }
+
+  .location-catalog-banner .premium-button {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .location-disclaimer-section {
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 400px) {
+  .location-hero h1 {
+    font-size: 34px;
+  }
+}

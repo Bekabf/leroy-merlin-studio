@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Encontrar na loja | Leroy Merlin Studio</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/localizacao.css">
+</head>
+
+<body class="home-page location-page">
+
+  <!-- CABEÇALHO PADRÃO -->
+  <header class="site-header">
+    <div class="container header-content">
+
+      <a class="logo" href="../index.html">
+
+        <span class="brand-symbol" aria-hidden="true">
+          <svg viewBox="0 0 64 64"
+               xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 4 L60 52 H4 Z" fill="#17633b"/>
+            <path d="M32 20 L46 44 H18 Z" fill="#ffffff"/>
+            <path d="M32 30 L40 44 H24 Z" fill="#17633b"/>
+          </svg>
+        </span>
+
+        <span class="brand-text">
+          <span class="brand-name">LEROY MERLIN</span>
+          <span class="brand-subtitle">
+            STUDIO · PROJETO ACADÊMICO
+          </span>
+        </span>
+
+      </a>
+
+      <button
+        id="menuToggle"
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav">
+        <a href="../index.html">Início</a>
+        <a href="assistente.html">Assistente</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="localizacao.html" class="active">
+          Encontrar na loja
+        </a>
+
+        <a href="meu-projeto.html" class="nav-project">
+          Meu projeto <span id="projectCount">0</span>
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- INTRODUÇÃO -->
+    <section class="location-hero">
+      <div class="container">
+
+        <span class="section-kicker">
+          ENCONTRE COM FACILIDADE
+        </span>
+
+        <h1>
+          Seu produto, no lugar certo.
+        </h1>
+
+        <p>
+          Descubra em qual corredor encontrar os materiais
+          do seu projeto e organize sua visita à nossa
+          loja demonstrativa.
+        </p>
+
+        <div class="location-hero-detail">
+          <span class="location-detail-icon">⌖</span>
+          Mais praticidade para planejar suas compras.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PESQUISA E LOCALIZAÇÃO -->
+    <section class="location-main-section">
+      <div class="container">
+
+        <!-- PESQUISA -->
+        <div class="location-search-box">
+
+          <div class="location-search-heading">
+            <span class="location-step">
+              ETAPA 01 · ENCONTRE SEU PRODUTO
+            </span>
+
+            <h2>O que você está procurando?</h2>
+
+            <p>
+              Pesquise pelo nome do produto para consultar
+              sua localização demonstrativa.
+            </p>
+          </div>
+
+          <label for="locationSearch">
+            Buscar produto
+          </label>
+
+          <div class="location-input-wrapper">
+            <span class="location-search-icon" aria-hidden="true">
+              ⌕
+            </span>
+
+            <input
+              id="locationSearch"
+              type="search"
+              placeholder="Ex.: tinta, furadeira, lâmpada..."
+            >
+          </div>
+
+        </div>
+
+        <!-- LISTA E MAPA -->
+        <div class="location-layout">
+
+          <!-- PRODUTOS ENCONTRADOS -->
+          <section class="location-products">
+
+            <div class="location-panel-heading">
+              <span class="location-step">
+                ETAPA 02 · SELECIONE
+              </span>
+
+              <h2>Produtos encontrados</h2>
+
+              <p>
+                Escolha um produto para visualizar
+                seu corredor no mapa.
+              </p>
+            </div>
+
+            <div id="locationResults">
+              <p>Carregando produtos...</p>
+            </div>
+
+          </section>
+
+          <!-- MAPA -->
+          <section class="location-map-area">
+
+            <div class="location-panel-heading">
+              <span class="location-step">
+                ETAPA 03 · LOCALIZE
+              </span>
+
+              <h2>Mapa da loja</h2>
+
+              <p>
+                O corredor selecionado será destacado
+                no mapa ilustrativo.
+              </p>
+            </div>
+
+            <div class="location-map-frame">
+
+              <div class="location-map-top">
+                <span class="location-map-label">
+                  VISÃO GERAL
+                </span>
+
+                <span class="location-map-badge">
+                  MAPA DEMONSTRATIVO
+                </span>
+              </div>
+
+              <div id="storeMap" class="store-map">
+                <p>
+                  Selecione um produto para destacar
+                  o corredor.
+                </p>
+              </div>
+
+              <div class="location-map-legend">
+                <span class="legend-color"></span>
+                <span>Corredor selecionado</span>
+              </div>
+
+            </div>
+
+            <p class="location-map-note">
+              O mapa representa uma loja fictícia e não
+              corresponde à disposição de uma unidade real.
+            </p>
+
+          </section>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CHAMADA PARA O CATÁLOGO -->
+    <section class="location-catalog-section">
+      <div class="container">
+
+        <div class="location-catalog-banner">
+
+          <div>
+            <span class="section-kicker">
+              CONTINUE EXPLORANDO
+            </span>
+
+            <h2>
+              Ainda está escolhendo os materiais?
+            </h2>
+
+            <p>
+              Explore nosso catálogo demonstrativo
+              e encontre produtos para adicionar
+              ao seu projeto.
+            </p>
+          </div>
+
+          <a
+            href="produtos.html"
+            class="premium-button light-button"
+          >
+            Explorar produtos ↗
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AVISO ACADÊMICO -->
+    <section class="location-disclaimer-section">
+      <div class="container">
+
+        <p class="location-disclaimer">
+          <strong>Localização demonstrativa:</strong>
+          os corredores, produtos e a representação
+          da loja são fictícios, utilizados exclusivamente
+          para fins acadêmicos.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ PADRÃO -->
+  <footer class="premium-footer">
+
+    <div class="container footer-layout">
+
+      <div>
+        <strong>LEROY MERLIN STUDIO</strong>
+        <p>Ideias para transformar seus espaços.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="assistente.html">Assistente</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="localizacao.html">Localização</a>
+        <a href="meu-projeto.html">Meu projeto</a>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      Projeto acadêmico demonstrativo, sem vínculo oficial
+      com a Leroy Merlin. Produtos, valores e localizações
+      são ilustrativos.
+    </div>
+
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/localizacao.js"></script>
+
+</body>
+</html>

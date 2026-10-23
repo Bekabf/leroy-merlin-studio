@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Assistente | Leroy Merlin Studio</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/assistente.css">
+</head>
+
+<body class="home-page assistant-page">
+
+  <!-- CABEÇALHO -->
+  <header class="site-header">
+    <div class="container header-content">
+
+      <a class="logo" href="../index.html">
+
+        <span class="brand-symbol" aria-hidden="true">
+          <svg viewBox="0 0 64 64"
+               xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 4 L60 52 H4 Z" fill="#17633b"/>
+            <path d="M32 20 L46 44 H18 Z" fill="#ffffff"/>
+            <path d="M32 30 L40 44 H24 Z" fill="#17633b"/>
+          </svg>
+        </span>
+
+        <span class="brand-text">
+          <span class="brand-name">LEROY MERLIN</span>
+          <span class="brand-subtitle">
+            STUDIO · PROJETO ACADÊMICO
+          </span>
+        </span>
+
+      </a>
+
+      <button
+        id="menuToggle"
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav">
+        <a href="../index.html">Início</a>
+        <a href="assistente.html" class="active">Assistente</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="localizacao.html">Encontrar na loja</a>
+
+        <a href="meu-projeto.html" class="nav-project">
+          Meu projeto <span id="projectCount">0</span>
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- INTRODUÇÃO -->
+    <section class="assistant-hero">
+      <div class="container assistant-hero-content">
+
+        <span class="section-kicker">
+          SEU PROJETO COMEÇA AQUI
+        </span>
+
+        <h1>
+          Vamos transformar suas ideias
+          em possibilidades.
+        </h1>
+
+        <p>
+          Conte o que você deseja fazer no seu ambiente.
+          Nosso assistente demonstrativo vai ajudar você
+          a descobrir produtos para começar sua transformação.
+        </p>
+
+        <div class="assistant-hero-note">
+          <span class="assistant-note-icon">✦</span>
+          Planeje com mais facilidade, do seu jeito.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ÁREA PRINCIPAL DO ASSISTENTE -->
+    <section class="assistant-main-section">
+      <div class="container assistant-layout">
+
+        <div class="assistant-box">
+
+          <div class="assistant-box-heading">
+            <span class="assistant-step">
+              ETAPA 01 · CONTE SUA IDEIA
+            </span>
+
+            <h2>O que você deseja transformar?</h2>
+
+            <p>
+              Descreva sua necessidade com suas próprias
+              palavras. Não precisa conhecer os nomes
+              técnicos dos materiais.
+            </p>
+          </div>
+
+          <form id="assistantForm">
+
+            <label for="needText">
+              Descreva seu projeto
+            </label>
+
+            <textarea
+              id="needText"
+              rows="6"
+              required
+              placeholder="Ex.: Quero pintar meu quarto e melhorar a iluminação para deixar o ambiente mais aconchegante."
+            ></textarea>
+
+            <div class="assistant-form-footer">
+              <span>
+                Quanto mais detalhes você fornecer,
+                melhores poderão ser as sugestões.
+              </span>
+
+              <button
+                type="submit"
+                class="premium-button assistant-submit"
+              >
+                Descobrir produtos
+                <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+
+          </form>
+
+          <div id="assistantOutput" aria-live="polite"></div>
+
+        </div>
+
+        <!-- PAINEL DE EXEMPLOS -->
+        <aside class="assistant-examples">
+
+          <span class="assistant-side-kicker">
+            PRECISA DE INSPIRAÇÃO?
+          </span>
+
+          <h2>Comece com uma ideia simples.</h2>
+
+          <p>
+            Toda transformação começa com um pequeno
+            passo. Experimente uma destas sugestões:
+          </p>
+
+          <div class="assistant-suggestions">
+
+            <button
+              type="button"
+              class="suggestion-button"
+              data-suggestion="Quero pintar a parede do meu quarto."
+            >
+              <span class="suggestion-icon">✦</span>
+              Pintar meu quarto
+              <span class="suggestion-arrow">↗</span>
+            </button>
+
+            <button
+              type="button"
+              class="suggestion-button"
+              data-suggestion="Preciso instalar uma prateleira na parede."
+            >
+              <span class="suggestion-icon">⌂</span>
+              Instalar uma prateleira
+              <span class="suggestion-arrow">↗</span>
+            </button>
+
+            <button
+              type="button"
+              class="suggestion-button"
+              data-suggestion="Quero melhorar a iluminação da sala."
+            >
+              <span class="suggestion-icon">☼</span>
+              Melhorar a iluminação
+              <span class="suggestion-arrow">↗</span>
+            </button>
+
+            <button
+              type="button"
+              class="suggestion-button"
+              data-suggestion="Quero organizar e decorar minha casa."
+            >
+              <span class="suggestion-icon">▦</span>
+              Organizar e decorar
+              <span class="suggestion-arrow">↗</span>
+            </button>
+
+          </div>
+
+          <div class="assistant-side-note">
+            <span>✧</span>
+            <p>
+              Você pode adaptar qualquer sugestão
+              antes de continuar.
+            </p>
+          </div>
+
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- AVISO ACADÊMICO -->
+    <section class="assistant-disclaimer-section">
+      <div class="container">
+
+        <p class="assistant-disclaimer">
+          <strong>Sobre este assistente:</strong>
+          esta é uma demonstração acadêmica baseada
+          em regras de JavaScript. As recomendações
+          são ilustrativas e não substituem orientação
+          técnica especializada.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ PADRÃO DA HOME -->
+  <footer class="premium-footer">
+
+    <div class="container footer-layout">
+
+      <div>
+        <strong>LEROY MERLIN STUDIO</strong>
+        <p>Ideias para transformar seus espaços.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="assistente.html">Assistente</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="localizacao.html">Localização</a>
+        <a href="meu-projeto.html">Meu projeto</a>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      Projeto acadêmico demonstrativo, sem vínculo oficial
+      com a Leroy Merlin. Produtos, valores e localizações
+      são ilustrativos.
+    </div>
+
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/recomendacao.js"></script>
+
+  <!-- PREENCHE O CAMPO COM AS SUGESTÕES -->
+  <script>
+    document.querySelectorAll(".suggestion-button")
+      .forEach(function(button) {
+
+        button.addEventListener("click", function() {
+          const textarea = document.getElementById("needText");
+
+          textarea.value = button.dataset.suggestion;
+          textarea.focus();
+
+          document.querySelector(".assistant-box")
+            .scrollIntoView({
+              behavior: "smooth",
+              block: "center"
+            });
+        });
+
+      });
+  </script>
+
+</body>
+</html>

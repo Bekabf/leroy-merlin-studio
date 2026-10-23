@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Produtos | Leroy Merlin Studio</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/produtos.css">
+</head>
+
+<body class="home-page products-page">
+
+  <!-- CABEÇALHO PADRÃO -->
+  <header class="site-header">
+    <div class="container header-content">
+
+      <a class="logo" href="../index.html">
+
+        <span class="brand-symbol" aria-hidden="true">
+          <svg viewBox="0 0 64 64"
+               xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 4 L60 52 H4 Z" fill="#17633b"/>
+            <path d="M32 20 L46 44 H18 Z" fill="#ffffff"/>
+            <path d="M32 30 L40 44 H24 Z" fill="#17633b"/>
+          </svg>
+        </span>
+
+        <span class="brand-text">
+          <span class="brand-name">LEROY MERLIN</span>
+          <span class="brand-subtitle">
+            STUDIO · PROJETO ACADÊMICO
+          </span>
+        </span>
+
+      </a>
+
+      <button
+        id="menuToggle"
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav">
+        <a href="../index.html">Início</a>
+        <a href="assistente.html">Assistente</a>
+        <a href="produtos.html" class="active">Produtos</a>
+        <a href="localizacao.html">Encontrar na loja</a>
+
+        <a href="meu-projeto.html" class="nav-project">
+          Meu projeto <span id="projectCount">0</span>
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- INTRODUÇÃO DO CATÁLOGO -->
+    <section class="products-hero">
+      <div class="container">
+
+        <span class="section-kicker">
+          CATÁLOGO DEMONSTRATIVO
+        </span>
+
+        <h1>
+          Encontre tudo para começar
+          sua transformação.
+        </h1>
+
+        <p>
+          Explore produtos, descubra possibilidades e escolha
+          os materiais que fazem sentido para seu projeto.
+          Tudo em uma experiência simples e organizada.
+        </p>
+
+        <div class="products-hero-detail">
+          <span class="products-detail-icon">✦</span>
+          Seu próximo projeto começa com boas escolhas.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="products-catalog-section">
+      <div class="container">
+
+        <!-- BARRA DE PESQUISA E FILTROS -->
+        <div class="products-toolbar">
+
+          <div class="products-toolbar-heading">
+            <div>
+              <span class="products-step">
+                EXPLORE AS POSSIBILIDADES
+              </span>
+
+              <h2>Nosso catálogo</h2>
+            </div>
+
+            <p>
+              Encontre produtos por nome ou categoria.
+            </p>
+          </div>
+
+          <div class="product-controls">
+
+            <div class="product-search-group">
+              <label for="productSearch">
+                Buscar produto
+              </label>
+
+              <div class="product-input-wrapper">
+                <span class="product-search-icon" aria-hidden="true">
+                  ⌕
+                </span>
+
+                <input
+                  id="productSearch"
+                  type="search"
+                  placeholder="Ex.: tinta, iluminação, ferramentas..."
+                >
+              </div>
+            </div>
+
+            <div class="product-filter-group">
+              <label for="categoryFilter">
+                Filtrar por categoria
+              </label>
+
+              <select id="categoryFilter">
+                <option value="Todas">Todas as categorias</option>
+                <option value="Pintura">Pintura</option>
+                <option value="Ferramentas">Ferramentas</option>
+                <option value="Ferragens">Ferragens</option>
+                <option value="Iluminação">Iluminação</option>
+                <option value="Banheiro">Banheiro</option>
+                <option value="Organização">Organização</option>
+                <option value="Decoração">Decoração</option>
+              </select>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- MENSAGENS DO JAVASCRIPT -->
+        <p
+          id="productMessage"
+          class="result-message"
+          aria-live="polite"
+        ></p>
+
+        <!-- PRODUTOS GERADOS PELO JAVASCRIPT -->
+        <section
+          id="productGrid"
+          class="product-grid"
+          aria-label="Lista de produtos"
+        >
+          <p>Carregando produtos...</p>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- CHAMADA PARA O ASSISTENTE -->
+    <section class="products-assistant-section">
+      <div class="container">
+
+        <div class="products-assistant-banner">
+
+          <div>
+            <span class="section-kicker">
+              PRECISA DE UMA AJUDA?
+            </span>
+
+            <h2>
+              Não sabe quais materiais escolher?
+            </h2>
+
+            <p>
+              Conte sua ideia ao nosso assistente demonstrativo
+              e descubra sugestões para começar seu projeto.
+            </p>
+          </div>
+
+          <a
+            href="assistente.html"
+            class="premium-button light-button"
+          >
+            Conhecer assistente ↗
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AVISO -->
+    <section class="products-disclaimer-section">
+      <div class="container">
+
+        <p class="products-disclaimer">
+          <strong>Catálogo demonstrativo:</strong>
+          os produtos, preços e corredores apresentados
+          são ilustrativos e utilizados exclusivamente
+          para fins acadêmicos.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ PADRÃO -->
+  <footer class="premium-footer">
+
+    <div class="container footer-layout">
+
+      <div>
+        <strong>LEROY MERLIN STUDIO</strong>
+        <p>Ideias para transformar seus espaços.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="assistente.html">Assistente</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="localizacao.html">Localização</a>
+        <a href="meu-projeto.html">Meu projeto</a>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      Projeto acadêmico demonstrativo, sem vínculo oficial
+      com a Leroy Merlin. Produtos, valores e localizações
+      são ilustrativos.
+    </div>
+
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/produtos.js"></script>
+
+</body>
+</html>

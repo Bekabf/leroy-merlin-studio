@@ -1,0 +1,735 @@
+
+/* ==========================================
+   LEROY MERLIN STUDIO
+   MEU PROJETO - CSS COMPLETO
+========================================== */
+
+/* INTRODUÇÃO */
+
+.project-page .project-hero {
+  padding: 85px 0 65px;
+  background: #fafaf7;
+}
+
+.project-page .project-hero h1 {
+  max-width: 850px;
+  margin: 0 0 25px;
+  color: #172d20;
+  font-size: clamp(40px, 4.5vw, 64px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -2px;
+}
+
+.project-page .project-hero p {
+  max-width: 680px;
+  margin: 0;
+  color: #66766c;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.project-page .project-hero-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  color: #6b8573;
+  font-size: 13px;
+}
+
+.project-page .project-detail-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e5f1e8;
+  color: #17633b;
+  font-size: 18px;
+}
+
+/* ==========================================
+   ÁREA PRINCIPAL
+========================================== */
+
+.project-page .project-main-section {
+  padding: 20px 0 95px;
+}
+
+.project-page .project-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.project-page .project-step {
+  display: block;
+  margin-bottom: 13px;
+  color: #23824e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.project-page .project-section-heading h2 {
+  margin: 0;
+  color: #20392a;
+  font-size: 31px;
+  letter-spacing: -0.7px;
+}
+
+.project-page .project-explore-link {
+  color: #17633b;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.project-page .project-explore-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   LAYOUT DO PROJETO
+========================================== */
+
+.project-page .project-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(300px, 0.85fr);
+  align-items: start;
+  gap: 28px;
+}
+
+/* PAINEL DE PRODUTOS */
+
+.project-page .project-products {
+  min-width: 0;
+  margin: 0;
+  padding: 34px;
+  background: #ffffff;
+  border: 1px solid #e2eae0;
+  border-radius: 20px;
+  box-shadow: 0 12px 38px rgba(24, 64, 39, 0.04);
+}
+
+.project-page .project-panel-heading {
+  margin-bottom: 28px;
+}
+
+.project-page .project-panel-heading h2 {
+  margin: 0 0 12px;
+  color: #20392a;
+  font-size: 26px;
+  letter-spacing: -0.6px;
+}
+
+.project-page .project-panel-heading p {
+  margin: 0;
+  color: #718077;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.project-page #projectItems {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-page #projectItems > * {
+  min-width: 0;
+}
+
+/* ==========================================
+   CARTÕES DOS PRODUTOS
+========================================== */
+
+.project-page .project-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px;
+  background: #fafcf9;
+  border: 1px solid #e3ebe1;
+  border-radius: 15px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project-page .project-item:hover {
+  border-color: #b4d2bc;
+  box-shadow: 0 8px 22px rgba(24, 64, 39, 0.05);
+  transform: translateY(-2px);
+}
+
+/* ÍCONE DO PRODUTO */
+
+.project-page .project-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+  background: #eaf2e8;
+  border-radius: 13px;
+  font-size: 42px;
+}
+
+/* INFORMAÇÕES DO PRODUTO */
+
+.project-page .project-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-page .project-item-category {
+  display: block;
+  margin-bottom: 9px;
+  color: #23824e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.project-page .project-item-info h3 {
+  margin: 0 0 12px;
+  color: #20392a;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.project-page .project-item-location {
+  margin: 0 0 8px;
+  color: #718077;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.project-page .project-item-location span {
+  color: #23824e;
+  font-size: 17px;
+}
+
+.project-page .project-item-unit-price {
+  margin: 0 0 22px;
+  color: #718077;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.project-page .project-item-unit-price strong {
+  color: #355440;
+}
+
+/* ==========================================
+   QUANTIDADE E VALOR DO PRODUTO
+========================================== */
+
+.project-page .project-item-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #e2eae0;
+}
+
+.project-page .project-quantity-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-page .project-quantity-label,
+.project-page .project-item-price-area > span {
+  color: #718077;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* CONTROLE + E - */
+
+.project-page .quantity-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d8e5d7;
+  border-radius: 9px;
+}
+
+.project-page .quantity-control button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+  border: none;
+  border-radius: 0;
+  color: #17633b;
+  font-family: inherit;
+  font-size: 21px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.project-page .quantity-control button:hover {
+  background: #eaf2e8;
+}
+
+.project-page .quantity-control .quantity-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 38px;
+  padding: 0 6px;
+  color: #20392a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* TOTAL INDIVIDUAL */
+
+.project-page .project-item-price-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.project-page .project-item-total {
+  margin: 0;
+  color: #17633b;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+/* REMOVER PRODUTO */
+
+.project-page .remove-product {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #a14c45;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.project-page .remove-product:hover {
+  color: #7e302a;
+  text-decoration: underline;
+}
+
+/* ==========================================
+   RESUMO FINANCEIRO
+========================================== */
+
+.project-page .project-summary {
+  position: sticky;
+  top: 100px;
+  min-width: 0;
+  margin: 0;
+  padding: 36px;
+  background: #194d32;
+  border: 1px solid #194d32;
+  border-radius: 20px;
+  color: #ffffff;
+  box-shadow: 0 15px 35px rgba(20, 60, 35, 0.1);
+}
+
+.project-page .project-summary-kicker {
+  display: block;
+  margin-bottom: 15px;
+  color: #b6ddc3;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.project-page .project-summary h2 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 29px;
+  line-height: 1.2;
+  letter-spacing: -0.7px;
+}
+
+.project-page .project-summary-description {
+  margin: 0;
+  color: #d2e5d8;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.project-page .project-summary-divider {
+  height: 1px;
+  margin: 25px 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.project-page .project-summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 18px;
+  color: #d2e5d8;
+  font-size: 14px;
+}
+
+.project-page .project-summary-row strong {
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.project-page .project-total-area {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.project-page .project-total-area span {
+  color: #d2e5d8;
+  font-size: 14px;
+}
+
+.project-page .project-total-area strong {
+  color: #ffffff;
+  font-size: clamp(30px, 3vw, 39px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.project-page .project-summary-note {
+  margin: 0 0 28px;
+  color: #c4ddcc;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   BOTÕES DO RESUMO
+========================================== */
+
+.project-page .project-add-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 50px;
+  padding: 13px 16px;
+  margin-bottom: 12px;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 9px;
+  color: #17633b;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project-page .project-add-button:hover {
+  background: #e9f3ec;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.project-page .project-clear-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 16px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 9px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.project-page .project-clear-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+}
+
+.project-page .project-clear-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   PROJETO VAZIO
+========================================== */
+
+.project-page .project-empty-state {
+  padding: 65px 25px;
+  background: #fafcf9;
+  border: 1px dashed #cbdccb;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.project-page .project-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 20px;
+  background: #e5f1e8;
+  border-radius: 50%;
+  color: #17633b;
+  font-size: 30px;
+}
+
+.project-page .project-empty-state h3 {
+  margin: 0 0 14px;
+  color: #20392a;
+  font-size: 23px;
+  line-height: 1.4;
+}
+
+.project-page .project-empty-state p {
+  max-width: 360px;
+  margin: 0 auto 25px;
+  color: #718077;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.project-page .project-empty-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 13px 22px;
+  background: #17633b;
+  border-radius: 9px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.project-page .project-empty-button:hover {
+  background: #0c492a;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* ==========================================
+   BANNER DO ASSISTENTE
+========================================== */
+
+.project-page .project-assistant-section {
+  padding: 0 0 55px;
+}
+
+.project-page .project-assistant-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 55px 60px;
+  background: #eaf2e9;
+  border: 1px solid #dce8d9;
+  border-radius: 20px;
+}
+
+.project-page .project-assistant-banner .section-kicker {
+  color: #23824e;
+}
+
+.project-page .project-assistant-banner h2 {
+  margin: 0 0 18px;
+  color: #20392a;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.project-page .project-assistant-banner p {
+  max-width: 550px;
+  margin: 0;
+  color: #66766c;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.project-page .project-assistant-banner .premium-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 14px 22px;
+  background: #17633b;
+  border: 1px solid #17633b;
+  border-radius: 9px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.project-page .project-assistant-banner .premium-button:hover {
+  background: #0c492a;
+}
+
+/* ==========================================
+   AVISO ACADÊMICO
+========================================== */
+
+.project-page .project-disclaimer-section {
+  padding: 0 0 80px;
+}
+
+.project-page .project-disclaimer {
+  margin: 0;
+  padding: 20px 24px;
+  background: #edf3ec;
+  border-left: 3px solid #23824e;
+  border-radius: 8px;
+  color: #718077;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.project-page .project-disclaimer strong {
+  color: #355440;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 1000px) {
+  .project-page .project-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .project-page .project-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 700px) {
+  .project-page .project-hero {
+    padding: 55px 0 40px;
+  }
+
+  .project-page .project-hero h1 {
+    font-size: 39px;
+    letter-spacing: -1.4px;
+  }
+
+  .project-page .project-hero p {
+    font-size: 15px;
+  }
+
+  .project-page .project-section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-page .project-section-heading h2 {
+    font-size: 27px;
+  }
+
+  .project-page .project-products,
+  .project-page .project-summary {
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+
+  .project-page .project-item {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .project-page .project-item-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 35px;
+  }
+
+  .project-page .project-item-info {
+    width: 100%;
+  }
+
+  .project-page .project-item-bottom {
+    align-items: flex-start;
+  }
+
+  .project-page .project-item-total {
+    font-size: 20px;
+  }
+
+  .project-page .project-item-price-area {
+    align-items: flex-start;
+  }
+
+  .project-page .project-main-section {
+    padding-bottom: 65px;
+  }
+
+  .project-page .project-assistant-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+  }
+
+  .project-page .project-assistant-banner .premium-button {
+    width: 100%;
+  }
+
+  .project-page .project-disclaimer-section {
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 400px) {
+  .project-page .project-hero h1 {
+    font-size: 34px;
+  }
+
+  .project-page .project-item-bottom {
+    flex-direction: column;
+  }
+}

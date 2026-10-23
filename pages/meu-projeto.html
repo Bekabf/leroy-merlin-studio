@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Meu Projeto | Leroy Merlin Studio</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/meu-projeto.css">
+</head>
+
+<body class="home-page project-page">
+
+  <!-- CABEÇALHO PADRÃO -->
+  <header class="site-header">
+    <div class="container header-content">
+
+      <a class="logo" href="../index.html">
+
+        <span class="brand-symbol" aria-hidden="true">
+          <svg viewBox="0 0 64 64"
+               xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 4 L60 52 H4 Z" fill="#17633b"/>
+            <path d="M32 20 L46 44 H18 Z" fill="#ffffff"/>
+            <path d="M32 30 L40 44 H24 Z" fill="#17633b"/>
+          </svg>
+        </span>
+
+        <span class="brand-text">
+          <span class="brand-name">LEROY MERLIN</span>
+          <span class="brand-subtitle">
+            STUDIO · PROJETO ACADÊMICO
+          </span>
+        </span>
+
+      </a>
+
+      <button
+        id="menuToggle"
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+      >
+        ☰
+      </button>
+
+      <nav class="main-nav">
+        <a href="../index.html">Início</a>
+        <a href="assistente.html">Assistente</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="localizacao.html">Encontrar na loja</a>
+
+        <a href="meu-projeto.html"
+           class="nav-project active">
+          Meu projeto <span id="projectCount">0</span>
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- INTRODUÇÃO -->
+    <section class="project-hero">
+      <div class="container">
+
+        <span class="section-kicker">
+          PLANEJE SUA TRANSFORMAÇÃO
+        </span>
+
+        <h1>Seu projeto, suas escolhas.</h1>
+
+        <p>
+          Reúna os materiais que você precisa,
+          organize as quantidades e acompanhe
+          seu orçamento estimado em um só lugar.
+        </p>
+
+        <div class="project-hero-detail">
+          <span class="project-detail-icon">✦</span>
+          Planeje cada detalhe antes de começar.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ÁREA DO PROJETO -->
+    <section class="project-main-section">
+      <div class="container">
+
+        <div class="project-section-heading">
+          <div>
+            <span class="project-step">
+              SEU PLANEJAMENTO
+            </span>
+            <h2>Materiais e orçamento</h2>
+          </div>
+
+          <a href="produtos.html" class="project-explore-link">
+            Explorar catálogo ↗
+          </a>
+        </div>
+
+        <div class="project-layout">
+
+          <!-- LISTA DE PRODUTOS -->
+          <section class="project-products">
+
+            <div class="project-panel-heading">
+              <span class="project-step">
+                ETAPA 01 · MATERIAIS
+              </span>
+
+              <h2>Produtos selecionados</h2>
+
+              <p>
+                Confira os materiais adicionados e
+                ajuste as quantidades conforme sua necessidade.
+              </p>
+            </div>
+
+            <div id="projectItems" aria-live="polite">
+              <p>Carregando seu projeto...</p>
+            </div>
+
+          </section>
+
+          <!-- RESUMO FINANCEIRO -->
+          <aside class="project-summary">
+
+            <span class="project-summary-kicker">
+              ETAPA 02 · ORÇAMENTO
+            </span>
+
+            <h2>Resumo do projeto</h2>
+
+            <p class="project-summary-description">
+              Uma visão geral dos materiais e valores
+              estimados para sua transformação.
+            </p>
+
+            <div class="project-summary-divider"></div>
+
+            <div class="project-summary-row">
+              <span>Quantidade de itens</span>
+              <strong id="totalQuantity">0</strong>
+            </div>
+
+            <div class="project-summary-row">
+              <span>Subtotal</span>
+              <strong id="projectSubtotal">R$ 0,00</strong>
+            </div>
+
+            <div class="project-summary-divider"></div>
+
+            <div class="project-total-area">
+              <span>Total estimado</span>
+              <strong id="projectTotal">R$ 0,00</strong>
+            </div>
+
+            <p class="project-summary-note">
+              Valores ilustrativos para fins acadêmicos.
+              Este orçamento não representa uma cotação
+              oficial da Leroy Merlin.
+            </p>
+
+            <a
+              href="produtos.html"
+              class="project-add-button"
+            >
+              + Adicionar mais produtos
+            </a>
+
+            <button
+              id="clearProject"
+              type="button"
+              class="project-clear-button"
+            >
+              Limpar projeto
+            </button>
+
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CHAMADA PARA O ASSISTENTE -->
+    <section class="project-assistant-section">
+      <div class="container">
+
+        <div class="project-assistant-banner">
+
+          <div>
+            <span class="section-kicker">
+              CONTINUE PLANEJANDO
+            </span>
+
+            <h2>
+              Precisa de ajuda para escolher?
+            </h2>
+
+            <p>
+              Conte sua ideia ao nosso assistente
+              demonstrativo e descubra sugestões
+              de materiais para seu projeto.
+            </p>
+          </div>
+
+          <a
+            href="assistente.html"
+            class="premium-button light-button"
+          >
+            Conhecer assistente ↗
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AVISO -->
+    <section class="project-disclaimer-section">
+      <div class="container">
+
+        <p class="project-disclaimer">
+          <strong>Planejamento demonstrativo:</strong>
+          os produtos, valores e estimativas apresentados
+          são fictícios e utilizados exclusivamente
+          para fins acadêmicos.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ PADRÃO -->
+  <footer class="premium-footer">
+
+    <div class="container footer-layout">
+
+      <div>
+        <strong>LEROY MERLIN STUDIO</strong>
+        <p>Ideias para transformar seus espaços.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="assistente.html">Assistente</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="localizacao.html">Localização</a>
+        <a href="meu-projeto.html">Meu projeto</a>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      Projeto acadêmico demonstrativo, sem vínculo oficial
+      com a Leroy Merlin. Produtos, valores e localizações
+      são ilustrativos.
+    </div>
+
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/projeto.js"></script>
+
+</body>
+</html>

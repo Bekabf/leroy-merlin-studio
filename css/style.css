@@ -1,0 +1,1185 @@
+```css
+/* ========================================
+   1. CORES E CONFIGURAÇÕES GERAIS
+======================================== */
+
+:root {
+    --verde: #267342;
+    --verde-escuro: #174D2B;
+    --verde-claro: #EAF3EC;
+    --fundo: #F7F9F6;
+    --branco: #FFFFFF;
+    --texto: #202820;
+    --texto-secundario: #687168;
+    --borda: #E2E8E1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--branco);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: min(1160px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   2. CABEÇALHO E MENU
+======================================== */
+
+.site-header {
+    min-height: 82px;
+    padding: 0 max(24px, calc((100% - 1160px) / 2));
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    background: var(--branco);
+    border-bottom: 1px solid #EDF0EB;
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+}
+
+.brand-mark {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--verde);
+    color: var(--branco);
+
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.brand small {
+    display: block;
+    margin-top: 4px;
+
+    color: var(--texto-secundario);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    color: #5C655C;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.main-nav a {
+    transition: color 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--verde);
+}
+
+.main-nav .nav-project {
+    padding: 10px 13px;
+
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+
+    color: var(--verde-escuro);
+}
+
+.cart-count {
+    display: inline-grid;
+    place-items: center;
+
+    min-width: 20px;
+    height: 20px;
+    margin-left: 4px;
+    padding: 0 4px;
+
+    background: var(--verde-claro);
+    border-radius: 20px;
+
+    font-size: 11px;
+}
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: var(--verde);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* ========================================
+   3. PRIMEIRA SEÇÃO - APRESENTAÇÃO
+======================================== */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1.04fr;
+    align-items: center;
+    gap: 64px;
+
+    padding-top: 58px;
+    padding-bottom: 66px;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    color: var(--verde);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+}
+
+.hero h1 {
+    max-width: 550px;
+    margin: 18px 0 20px;
+
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--verde);
+}
+
+.hero-copy > p {
+    max-width: 470px;
+
+    color: var(--texto-secundario);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 13px 18px;
+
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    background: var(--verde);
+    color: var(--branco);
+}
+
+.button-primary:hover {
+    background: var(--verde-escuro);
+}
+
+.button-secondary {
+    background: var(--branco);
+    border-color: var(--borda);
+    color: var(--texto);
+}
+
+.button-secondary:hover {
+    background: var(--fundo);
+}
+
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 23px;
+
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+.hero-note::first-letter {
+    color: var(--verde);
+}
+
+.hero-visual {
+    position: relative;
+}
+
+.hero-visual > img {
+    width: 100%;
+    height: 425px;
+
+    object-fit: cover;
+
+    border-radius: 20px 20px 20px 4px;
+    background: var(--verde-claro);
+}
+
+.floating-card {
+    position: absolute;
+    left: -28px;
+    bottom: 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 17px;
+
+    background: var(--branco);
+    border: 1px solid #EDF0EB;
+    border-radius: 12px;
+
+    box-shadow: 0 12px 32px rgba(25, 57, 33, 0.10);
+}
+
+.floating-icon {
+    display: grid;
+    place-items: center;
+
+    width: 36px;
+    height: 36px;
+
+    background: var(--verde-claro);
+    border-radius: 10px;
+
+    color: var(--verde);
+    font-size: 20px;
+}
+
+.floating-card strong,
+.floating-card small {
+    display: block;
+}
+
+.floating-card strong {
+    font-size: 12px;
+}
+
+.floating-card small {
+    margin-top: 3px;
+
+    color: var(--texto-secundario);
+    font-size: 11px;
+}
+
+
+/* ========================================
+   4. FAIXA DE BENEFÍCIOS
+======================================== */
+
+.trust-strip {
+    background: #F4F8F3;
+    border-top: 1px solid #EDF2EC;
+    border-bottom: 1px solid #EDF2EC;
+}
+
+.trust-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    padding-top: 23px;
+    padding-bottom: 23px;
+}
+
+.trust-items > div {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.trust-icon {
+    display: grid;
+    place-items: center;
+
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+
+    background: var(--branco);
+    border: 1px solid #DFE9DF;
+    border-radius: 12px;
+
+    color: var(--verde);
+    font-size: 23px;
+}
+
+.trust-items strong,
+.trust-items small {
+    display: block;
+}
+
+.trust-items strong {
+    font-size: 13px;
+}
+
+.trust-items small {
+    margin-top: 2px;
+
+    color: var(--texto-secundario);
+    font-size: 11px;
+}
+
+
+/* ========================================
+   5. SEÇÃO DE FUNCIONALIDADES
+======================================== */
+
+.section {
+    padding-top: 76px;
+    padding-bottom: 76px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    margin-top: 12px;
+
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1.25;
+    letter-spacing: -1px;
+}
+
+.section-heading > p {
+    max-width: 320px;
+    margin-bottom: 3px;
+
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+
+    padding: 24px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+
+    transition: 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(25, 57, 33, 0.08);
+}
+
+.feature-icon {
+    display: grid;
+    place-items: center;
+
+    width: 46px;
+    height: 46px;
+    margin-bottom: 20px;
+
+    border-radius: 13px;
+    font-size: 24px;
+}
+
+.feature-icon.green {
+    background: var(--verde-claro);
+    color: var(--verde);
+}
+
+.feature-icon.sand {
+    background: #F5EFE5;
+    color: #8A693A;
+}
+
+.feature-icon.blue {
+    background: #EAF1F5;
+    color: #416D87;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.feature-card p {
+    min-height: 68px;
+    margin-bottom: 20px;
+
+    color: var(--texto-secundario);
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.card-link {
+    margin-top: auto;
+
+    color: var(--verde);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* ========================================
+   6. BANNER DO PROJETO
+======================================== */
+
+.project-banner {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    margin-bottom: 78px;
+    padding: 38px 44px;
+
+    background: var(--verde-escuro);
+    border-radius: 17px;
+
+    color: var(--branco);
+}
+
+.project-banner .eyebrow {
+    color: #A7D5B2;
+}
+
+.project-banner h2 {
+    margin: 10px 0;
+
+    font-size: 30px;
+    line-height: 1.25;
+}
+
+.project-banner p {
+    max-width: 530px;
+    margin-bottom: 22px;
+
+    color: #D7E4D8;
+    font-size: 13px;
+}
+
+.button-light {
+    background: var(--branco);
+    color: var(--verde-escuro);
+}
+
+.button-light:hover {
+    background: var(--verde-claro);
+}
+
+
+/* ========================================
+   7. RODAPÉ
+======================================== */
+
+.site-footer {
+    padding: 24px 0;
+
+    background: #FBFCFA;
+    border-top: 1px solid var(--borda);
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-brand {
+    font-size: 12px;
+}
+
+.footer-brand .brand-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+}
+
+.footer-brand small {
+    font-size: 8px;
+}
+
+.footer-inner p {
+    color: var(--texto-secundario);
+    font-size: 11px;
+}
+
+
+/* ========================================
+   8. ESTILOS DAS PÁGINAS INTERNAS
+======================================== */
+
+.page-shell {
+    min-height: 65vh;
+    padding: 48px 0 76px;
+    background: #FBFCFA;
+}
+
+.page-intro {
+    margin-bottom: 28px;
+}
+
+.page-intro h1 {
+    margin: 12px 0;
+    font-size: 38px;
+    line-height: 1.25;
+}
+
+.page-intro p,
+.muted {
+    color: var(--texto-secundario);
+}
+
+.page-intro p {
+    max-width: 690px;
+}
+
+.panel {
+    padding: 26px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 15px;
+}
+
+.panel h2 {
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.text-field,
+.search-field,
+.select-field {
+    width: 100%;
+    padding: 13px 14px;
+
+    background: var(--branco);
+    border: 1px solid #DCE4DB;
+    border-radius: 9px;
+
+    color: var(--texto);
+    outline: none;
+}
+
+.text-field:focus,
+.search-field:focus,
+.select-field:focus {
+    border-color: #6FA77C;
+    box-shadow: 0 0 0 3px var(--verde-claro);
+}
+
+textarea.text-field {
+    min-height: 135px;
+    resize: vertical;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.notice {
+    padding: 13px 15px;
+
+    background: #F4F8F3;
+    border: 1px solid #E0EBDF;
+    border-radius: 10px;
+
+    color: #526653;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   9. CARTÕES DE PRODUTOS
+======================================== */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+}
+
+.product-art {
+    display: grid;
+    place-items: center;
+
+    height: 145px;
+
+    background: var(--verde-claro);
+    color: var(--verde);
+    font-size: 54px;
+}
+
+.product-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    padding: 17px;
+}
+
+.product-category {
+    color: var(--verde);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.product-content h3 {
+    margin: 7px 0;
+    font-size: 17px;
+}
+
+.product-content p {
+    flex: 1;
+    margin-bottom: 14px;
+
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+.product-meta {
+    margin-bottom: 12px;
+    color: var(--texto-secundario);
+    font-size: 11px;
+}
+
+.product-price {
+    margin-bottom: 13px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.product-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.product-actions .button {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 11px;
+}
+
+.small-button {
+    padding: 9px 10px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+
+    color: var(--verde);
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   10. RESULTADOS E LOCALIZAÇÃO
+======================================== */
+
+.result-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.result-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 16px;
+
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background: var(--branco);
+}
+
+.result-emoji {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    width: 56px;
+    height: 56px;
+
+    background: var(--fundo);
+    border-radius: 12px;
+
+    font-size: 28px;
+}
+
+.result-item h3 {
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+.result-item p {
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+.result-price {
+    margin-left: auto;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.store-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 22px;
+}
+
+.store-map {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: start;
+    gap: 12px;
+
+    padding: 18px;
+
+    background: #F2F5F0;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+}
+
+.aisle {
+    padding: 18px 10px;
+
+    background: var(--branco);
+    border: 1px solid #D8E3D5;
+    border-radius: 9px;
+
+    color: #4C604E;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.aisle span {
+    display: block;
+    margin-top: 5px;
+
+    color: var(--verde);
+    font-size: 10px;
+}
+
+.location-result {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.location-result:last-child {
+    border-bottom: 0;
+}
+
+.location-result strong {
+    display: block;
+    font-size: 14px;
+}
+
+.location-result p {
+    margin: 3px 0;
+    color: var(--texto-secundario);
+    font-size: 12px;
+}
+
+
+/* ========================================
+   11. LISTA DO MEU PROJETO
+======================================== */
+
+.project-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    align-items: start;
+    gap: 20px;
+}
+
+.project-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 15px 0;
+    border-bottom: 1px solid #EDF0EB;
+}
+
+.project-line:last-child {
+    border-bottom: 0;
+}
+
+.project-line strong {
+    display: block;
+    font-size: 13px;
+}
+
+.project-line small {
+    display: block;
+    margin-top: 3px;
+
+    color: var(--texto-secundario);
+    font-size: 11px;
+}
+
+.line-price {
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity-control button {
+    width: 25px;
+    height: 25px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.total-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-top: 8px;
+    padding-top: 18px;
+
+    border-top: 1px solid var(--borda);
+    font-weight: 800;
+}
+
+.total-row strong {
+    color: var(--verde);
+    font-size: 25px;
+}
+
+.empty-state {
+    padding: 36px 18px;
+
+    background: var(--branco);
+    border: 1px dashed #D6E0D4;
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.empty-state h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.empty-state p {
+    margin-bottom: 16px;
+    color: var(--texto-secundario);
+    font-size: 13px;
+}
+
+
+/* ========================================
+   12. ADAPTAÇÃO PARA TABLETS
+======================================== */
+
+@media (max-width: 850px) {
+    .main-nav {
+        gap: 14px;
+    }
+
+    .hero {
+        gap: 30px;
+    }
+
+    .hero-visual > img {
+        height: 350px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .store-layout,
+    .project-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ========================================
+   13. ADAPTAÇÃO PARA CELULARES
+======================================== */
+
+@media (max-width: 650px) {
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .site-header {
+        min-height: 70px;
+        padding: 0 16px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 69px;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 15px 20px 20px;
+
+        background: var(--branco);
+        border-bottom: 1px solid var(--borda);
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .main-nav a {
+        padding: 11px 0;
+    }
+
+    .main-nav .nav-project {
+        margin-top: 7px;
+        padding: 10px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+
+        padding-top: 38px;
+        padding-bottom: 44px;
+    }
+
+    .hero-visual > img {
+        height: 280px;
+    }
+
+    .floating-card {
+        left: 10px;
+        bottom: 12px;
+    }
+
+    .trust-items {
+        grid-template-columns: 1fr;
+        gap: 15px;
+
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .section {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading > p {
+        margin-top: 13px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card p {
+        min-height: 0;
+    }
+
+    .project-banner {
+        display: block;
+        margin-bottom: 45px;
+        padding: 26px;
+    }
+
+    .project-banner h2 {
+        font-size: 25px;
+    }
+
+    .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .page-shell {
+        padding-top: 32px;
+        padding-bottom: 50px;
+    }
+
+    .page-intro h1 {
+        font-size: 31px;
+    }
+
+    .panel {
+        padding: 19px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-art {
+        height: 120px;
+    }
+
+    .form-row {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .result-item {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .result-price {
+        margin-left: 72px;
+    }
+
+    .store-map {
+        padding: 10px;
+    }
+
+    .aisle {
+        padding: 14px 7px;
+    }
+}
+```

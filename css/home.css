@@ -1,0 +1,707 @@
+
+/* ==========================================
+   LEROY MERLIN STUDIO
+   HOME PREMIUM - PROJETO ACADÊMICO
+========================================== */
+
+/* CONFIGURAÇÕES GERAIS */
+
+.home-page {
+  margin: 0;
+  background: #fafaf7;
+  color: #20352a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.home-page * {
+  box-sizing: border-box;
+}
+
+.home-page .container {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+}
+
+/* ==========================================
+   CABEÇALHO
+========================================== */
+
+.home-page .site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6ebe5;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.home-page .header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  min-height: 86px;
+}
+
+/* LOGO COM SÍMBOLO SVG */
+
+.home-page .logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.home-page .brand-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+}
+
+.home-page .brand-symbol svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.home-page .brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.home-page .brand-name {
+  color: #17633b;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.home-page .brand-subtitle {
+  color: #748479;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* MENU DE NAVEGAÇÃO */
+
+.home-page .main-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.home-page .main-nav a {
+  color: #405448;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.home-page .main-nav a:hover,
+.home-page .main-nav a.active {
+  color: #087d3c;
+}
+
+.home-page .nav-project {
+  padding: 12px 16px;
+  background: #edf5ef;
+  border-radius: 8px;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.home-page .nav-project:hover {
+  background: #dcefe2;
+}
+
+.home-page .menu-toggle {
+  display: none;
+}
+
+/* ==========================================
+   HERO - BANNER PRINCIPAL
+========================================== */
+
+.premium-hero {
+  padding: 75px 0 95px;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.section-kicker {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #23824e;
+  margin-bottom: 22px;
+}
+
+.hero-copy h1 {
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.08;
+  letter-spacing: -2.5px;
+  font-weight: 700;
+  margin: 0 0 28px;
+  color: #172d20;
+}
+
+.hero-copy p {
+  color: #617067;
+  font-size: 17px;
+  line-height: 1.9;
+  max-width: 470px;
+}
+
+/* BOTÕES */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 34px;
+}
+
+.premium-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 17px 26px;
+  background: #17633b;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 8px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.premium-button:hover {
+  background: #0c492a;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.premium-text-link {
+  color: #244b33;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.premium-text-link:hover {
+  color: #087d3c;
+}
+
+/* TEXTO ABAIXO DO BOTÃO */
+
+.hero-note {
+  margin-top: 50px;
+  color: #819086;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.note-line {
+  width: 34px;
+  height: 1px;
+  background: #92a79a;
+  flex-shrink: 0;
+}
+
+/* IMAGEM PRINCIPAL */
+
+.hero-visual {
+  position: relative;
+  min-height: 570px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.hero-visual img {
+  display: block;
+  width: 100%;
+  height: 570px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.hero-image-label {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  padding: 20px 24px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: calc(100% - 48px);
+}
+
+.hero-image-label span {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #397a53;
+  font-weight: 800;
+}
+
+.hero-image-label strong {
+  font-size: 14px;
+  color: #263c2e;
+}
+
+/* ==========================================
+   EXPERIÊNCIA - COMO FUNCIONA
+========================================== */
+
+.experience-section {
+  background: #ffffff;
+  padding: 100px 0 110px;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin-bottom: 55px;
+}
+
+.section-heading h2,
+.inspiration-copy h2,
+.project-banner h2 {
+  font-size: clamp(32px, 3.5vw, 48px);
+  line-height: 1.18;
+  letter-spacing: -1.4px;
+  color: #172d20;
+  margin: 0 0 20px;
+}
+
+.section-heading p,
+.inspiration-copy p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #66766c;
+}
+
+/* CARTÕES DE FUNCIONALIDADES */
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 330px;
+  padding: 32px;
+  background: #f6f8f5;
+  border: 1px solid #e6ede5;
+  border-radius: 16px;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  border-color: #9fc9ad;
+  box-shadow: 0 12px 28px rgba(20, 60, 35, 0.08);
+}
+
+.experience-number {
+  font-size: 10px;
+  color: #688674;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.experience-icon {
+  font-size: 36px;
+  color: #17633b;
+  margin: 30px 0 16px;
+}
+
+.experience-card h3 {
+  font-size: 23px;
+  color: #20392a;
+  margin: 0 0 12px;
+}
+
+.experience-card p {
+  color: #718077;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.card-link {
+  margin-top: auto;
+  padding-top: 24px;
+  color: #17633b;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* ==========================================
+   SEÇÃO DE INSPIRAÇÃO
+========================================== */
+
+.inspiration-section {
+  padding: 110px 0;
+}
+
+.inspiration-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 95px;
+}
+
+.inspiration-image img {
+  display: block;
+  width: 100%;
+  height: 510px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.inspiration-copy p {
+  margin-bottom: 32px;
+}
+
+/* ==========================================
+   SEÇÃO MEU PROJETO
+========================================== */
+
+.project-banner-section {
+  padding: 20px 0 110px;
+}
+
+.project-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 65px;
+  background: #194d32;
+  border-radius: 20px;
+}
+
+.project-banner .section-kicker {
+  color: #b6ddc3;
+}
+
+.project-banner h2 {
+  color: #ffffff;
+}
+
+.project-banner p {
+  color: #d2e5d8;
+  max-width: 530px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.light-button {
+  background: #ffffff;
+  color: #194d32;
+  white-space: nowrap;
+}
+
+.light-button:hover {
+  background: #e6f3e9;
+  color: #194d32;
+}
+
+/* ==========================================
+   RODAPÉ
+========================================== */
+
+.premium-footer {
+  background: #102b1d;
+  color: #ffffff;
+  padding: 55px 0 25px;
+}
+
+.footer-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 50px;
+}
+
+.footer-layout strong {
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.footer-layout p {
+  color: #b3c9bb;
+  margin-top: 12px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: #dcebe0;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #375343;
+  padding-top: 22px;
+  color: #a9c0b0;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   RESPONSIVIDADE - TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+  .home-page .header-content {
+    gap: 18px;
+  }
+
+  .home-page .main-nav {
+    gap: 14px;
+  }
+
+  .home-page .main-nav a {
+    font-size: 12px;
+  }
+
+  .home-page .brand-name {
+    font-size: 18px;
+  }
+
+  .home-page .brand-symbol {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-layout,
+  .inspiration-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .premium-hero {
+    padding: 55px 0;
+  }
+
+  .hero-visual {
+    min-height: 0;
+  }
+
+  .hero-visual img {
+    height: 420px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card {
+    min-height: 270px;
+  }
+
+  .inspiration-layout {
+    gap: 35px;
+  }
+
+  .project-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px;
+  }
+}
+
+/* ==========================================
+   RESPONSIVIDADE - CELULAR
+========================================== */
+
+@media (max-width: 700px) {
+  .home-page .header-content {
+    flex-wrap: wrap;
+    min-height: 76px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .home-page .brand-symbol {
+    width: 42px;
+    height: 42px;
+  }
+
+  .home-page .brand-name {
+    font-size: 16px;
+  }
+
+  .home-page .brand-subtitle {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .home-page .menu-toggle {
+    display: block;
+    border: none;
+    background: transparent;
+    color: #17633b;
+    font-size: 26px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .home-page .main-nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    width: 100%;
+    padding: 15px 0 25px;
+  }
+
+  .home-page .main-nav.active {
+    display: flex;
+  }
+
+  .hero-copy h1 {
+    font-size: 44px;
+    letter-spacing: -1.5px;
+  }
+
+  .hero-copy p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    gap: 20px;
+  }
+
+  .hero-note {
+    margin-top: 32px;
+  }
+
+  .hero-visual img {
+    height: 350px;
+  }
+
+  .hero-image-label {
+    left: 12px;
+    bottom: 12px;
+    right: 12px;
+    max-width: none;
+    padding: 16px;
+  }
+
+  .experience-section,
+  .inspiration-section {
+    padding: 65px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 35px;
+  }
+
+  .experience-card {
+    padding: 26px;
+  }
+
+  .inspiration-image img {
+    height: 330px;
+  }
+
+  .project-banner-section {
+    padding-bottom: 65px;
+  }
+
+  .project-banner {
+    padding: 30px;
+    gap: 25px;
+  }
+
+  .project-banner .premium-button {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .footer-layout {
+    flex-direction: column;
+  }
+
+  .footer-links {
+    gap: 16px;
+  }
+}
+
+/* ==========================================
+   AJUSTES PARA TELAS PEQUENAS
+========================================== */
+
+@media (max-width: 400px) {
+  .home-page .logo {
+    gap: 8px;
+  }
+
+  .home-page .brand-symbol {
+    width: 36px;
+    height: 36px;
+  }
+
+  .home-page .brand-name {
+    font-size: 14px;
+  }
+
+  .home-page .brand-subtitle {
+    font-size: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-copy h1 {
+    font-size: 37px;
+  }
+
+  .premium-button {
+    padding: 15px 20px;
+  }
+}
